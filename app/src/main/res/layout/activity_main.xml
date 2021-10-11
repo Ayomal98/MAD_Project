@@ -1,37 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#000"
-    tools:context=".MainActivity">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="monospace"
-        android:text="Eventify"
-        android:textColor="#FFF"
-        android:textSize="48sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="@drawable/background"
+        android:paddingBottom="20dp"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
-        android:text="Welcome to Eventify, One destination to keep track all of your events. Alarms, Meeting Remiders we will take care of those so you dont have to be worried,"
-        android:textColor="#FFFFF1"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="monospace"
+            android:text="Add Alarm"
+            android:textColor="#FFF"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/text_title"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:background="@drawable/rounded_corner"
+            android:hint="Enter your alarm title"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="15dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            app:layout_constraintVertical_bias="0.072" />
+
+
+        <EditText
+            android:id="@+id/text_description"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_corner"
+            android:hint="Enter your descriptions"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="30dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_title"
+            app:layout_constraintVertical_bias="0.0" />
+
+<!--        <CalendarView-->
+<!--            android:id="@+id/input_date"-->
+<!--            android:layout_width="350dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="16dp"-->
+<!--            android:background="@drawable/rounded_corner"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintHorizontal_bias="0.491"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/text_description"-->
+<!--            app:layout_constraintVertical_bias="0.0" />-->
+
+        <TextView
+            android:id="@+id/select_date"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/rounded_corner"
+            android:drawableTop="@drawable/ic_baseline_date_range_24"
+            android:ems="10"
+            android:hint="Select your date"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_description"
+            app:layout_constraintVertical_bias="0.057" />
+
+        <TextView
+            android:id="@+id/select_time"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rounded_corner"
+            android:drawableTop="@drawable/ic_baseline_timer_24"
+            android:ems="10"
+            android:hint="Select your alarm time"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_date"
+            app:layout_constraintVertical_bias="1.0" />
+
+
+        <EditText
+            android:id="@+id/select_notifications"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_corner"
+            android:hint="Select your snooze times"
+            android:inputType="text"
+            android:paddingLeft="20dp"
+            android:paddingRight="15dp"
+            android:paddingBottom="30dp"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_time"
+            app:layout_constraintVertical_bias="0.0" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
