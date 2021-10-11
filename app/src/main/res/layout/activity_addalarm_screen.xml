@@ -8,9 +8,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/background"
-        android:paddingBottom="20dp"
-        tools:context=".MainActivity">
+        android:background="#000"
+        android:paddingBottom="40dp"
+        tools:context=".AddAlarmActivity">
 
         <TextView
             android:id="@+id/textView"
@@ -25,7 +25,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
         <EditText
             android:id="@+id/text_title"
@@ -44,8 +43,7 @@
             app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="0.072" />
-
+            app:layout_constraintVertical_bias="0.021" />
 
         <EditText
             android:id="@+id/text_description"
@@ -66,18 +64,6 @@
             app:layout_constraintTop_toBottomOf="@+id/text_title"
             app:layout_constraintVertical_bias="0.0" />
 
-<!--        <CalendarView-->
-<!--            android:id="@+id/input_date"-->
-<!--            android:layout_width="350dp"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:background="@drawable/rounded_corner"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintHorizontal_bias="0.491"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/text_description"-->
-<!--            app:layout_constraintVertical_bias="0.0" />-->
 
         <TextView
             android:id="@+id/select_date"
@@ -100,6 +86,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text_description"
             app:layout_constraintVertical_bias="0.057" />
 
+
         <TextView
             android:id="@+id/select_time"
             android:layout_width="350dp"
@@ -118,16 +105,41 @@
             app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_date"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.0" />
 
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/select_notifications"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_time"
+            app:layout_constraintVertical_bias="0.006">
+
+            <AutoCompleteTextView
+                android:id="@+id/ext"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_corner"
+                android:inputType="none"
+                android:text="Select " />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <EditText
-            android:id="@+id/select_notifications"
+            android:id="@+id/select_audio"
             android:layout_width="350dp"
-            android:layout_height="50dp"
+            android:layout_height="100dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/rounded_corner"
-            android:hint="Select your snooze times"
+            android:hint="Select an alarm audio"
             android:inputType="text"
             android:paddingLeft="20dp"
             android:paddingRight="15dp"
@@ -137,7 +149,21 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.491"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/select_time"
+            app:layout_constraintTop_toBottomOf="@+id/select_notifications"
             app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            tools:layout_editor_absoluteX="180dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/select_audio"
+            tools:layout_editor_absoluteY="689dp" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
