@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:background="#000"
         android:paddingBottom="40dp"
-        tools:context=".AddAlarmActivity">
+        tools:context=".AddReminderActivity">
 
         <TextView
             android:id="@+id/textView"
@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="monospace"
-            android:text="Add Alarm"
+            android:text="Add Reminders"
             android:textColor="#FFF"
             android:textSize="40sp"
             android:textStyle="bold"

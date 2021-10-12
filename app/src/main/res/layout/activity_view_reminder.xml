@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
-    tools:context="ViewAlarmActivity">
+    tools:context="ViewReminderActivity">
 
     <TextView
         android:id="@+id/textView"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:fontFamily="monospace"
-        android:text="View Alarms"
+        android:text="View Reminders"
         android:textColor="#fff"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -23,51 +23,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imgView3"
+        android:id="@+id/imgView10"
         android:layout_width="369dp"
         android:layout_height="173dp"
-        android:layout_marginTop="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.04"
-        app:srcCompat="@drawable/smallfragment" />
-
-    <ImageView
-        android:id="@+id/imgView4"
-        android:layout_width="369dp"
-        android:layout_height="173dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.38"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgView3"
-        app:layout_constraintVertical_bias="0.16"
+        app:layout_constraintVertical_bias="0.167"
         app:srcCompat="@drawable/smallfragment" />
 
     <Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imgView3"
-        app:layout_constraintEnd_toEndOf="@+id/imgView3"
+        app:layout_constraintBottom_toBottomOf="@+id/imgView10"
+        app:layout_constraintEnd_toEndOf="@+id/imgView10"
         app:layout_constraintHorizontal_bias="0.969"
-        app:layout_constraintStart_toStartOf="@+id/imgView3"
-        app:layout_constraintTop_toTopOf="@+id/imgView3"
+        app:layout_constraintStart_toStartOf="@+id/imgView10"
+        app:layout_constraintTop_toTopOf="@+id/imgView10"
         app:layout_constraintVertical_bias="0.452" />
-
-    <Switch
-        android:id="@+id/switch2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="73dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgView4"
-        app:layout_constraintEnd_toEndOf="@+id/imgView4"
-        app:layout_constraintHorizontal_bias="0.969"
-        app:layout_constraintStart_toStartOf="@+id/imgView4"
-        app:layout_constraintTop_toTopOf="@+id/imgView4"
-        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/addNewBtn"
@@ -82,7 +58,7 @@
         app:layout_constraintVertical_bias="0.048" />
 
     <ImageButton
-        android:id="@+id/view_reminders_btn"
+        android:id="@+id/reminder_btn"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:backgroundTint="@color/black"
@@ -93,10 +69,11 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.971"
         app:srcCompat="@drawable/calendar_check_fill" />
+
     <ImageButton
         android:id="@+id/view_alarm_btn"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="43dp"
+        android:layout_height="46dp"
         android:backgroundTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
