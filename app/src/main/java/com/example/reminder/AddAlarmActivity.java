@@ -5,6 +5,7 @@ import androidx.fragment.app.DialogFragment;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -63,8 +64,9 @@ public class AddAlarmActivity extends AppCompatActivity implements DatePickerDia
                 }
                DatabaseHelper databaseHelper=new DatabaseHelper(AddAlarmActivity.this);
                boolean success= databaseHelper.addOne(alarmModel);
-                System.out.println(success);
-               Toast.makeText(AddAlarmActivity.this,"Success :" + success, Toast.LENGTH_SHORT).show();
+               Toast.makeText(AddAlarmActivity.this,"Your alarm has been setup" , Toast.LENGTH_SHORT).show();
+               Intent intent=new Intent(AddAlarmActivity.this,ViewAlarmActivity.class);
+               startActivity(intent);
             }
         });
 

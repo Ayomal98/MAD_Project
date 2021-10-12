@@ -49,6 +49,12 @@ public class AlarmReminderModel {
         this.time=time;
     }
 
+    public AlarmReminderModel(int id,String title,String date,String time) {
+        this.id=id;
+        this.title=title;
+        this.date = date;
+        this.time = time;
+    }
 
     public void setUri(String uri) {
         this.uri = uri;

@@ -2,12 +2,15 @@ package com.example.reminder;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
@@ -71,11 +74,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put(Location_Column,alarmReminderModel.getLocation());
         cv.put(Type_Column,alarmReminderModel.getType());
         cv.put(No_Snoozes_Column,alarmReminderModel.getNoNotifications());
+        cv.put(Date_Column,alarmReminderModel.getDate());
+        cv.put(Time_Column,alarmReminderModel.getTime());
         long insert=db.insert(REMINDER_TABLE,null,cv);
         if(insert == -1 ){
             return false;
         }else{
             return true;
         }
+    }
+
+    public List<AlarmReminderModel> getEveryAlarms(){
+        List<AlarmReminderModel> returnAlarms=new ArrayList<>();
+        String type="Alarm";
+        String queryAlarm="SELECT * FROM ALARM_REMINDER" ;
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryAlarm,null);
+        if(cursor.moveToFirst()){
+            do{
+                int id=cursor.getInt(0);
+                String Title=cursor.getString(1);
+                String Date=cursor.getString(4);
+                String Time=cursor.getString(5);
+                AlarmReminderModel alarmReminderModel=new AlarmReminderModel(id,Title,Date,Time);
+                returnAlarms.add(alarmReminderModel);
+            }while(cursor.moveToNext());
+        }else{
+
+        }
+        System.out.print("Alatms: ");
+        System.out.println(returnAlarms);
+        return returnAlarms;
     }
 }
