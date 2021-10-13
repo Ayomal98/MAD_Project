@@ -108,35 +108,34 @@ public class AddAlarmActivity extends AppCompatActivity implements DatePickerDia
             }
         });
 
-//        select_audio_alarm.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent= new Intent(AddAlarmActivity.this,FilePickerActivity.class);
-//                intent.putExtra(FilePickerActivity.CONFIGS,new Configurations.Builder().setCheckPermission(true).setShowAudios(true).setShowImages(false).setShowVideos(false).setMaxSelection(1).setSkipZeroSizeFiles(true).build());
-//                startActivityForResult(intent,103);
-//            }
-//        });
-
-
-
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == RESULT_OK && data !=null ){
-            ArrayList<MediaFile> mediaFiles=data.getParcelableArrayListExtra(FilePickerActivity.MEDIA_FILES);
-            String path=mediaFiles.get(0).getPath();
-            if(requestCode == 103){
-                filePathToToast("Audio Path :" + path);
-                return;
+        select_audio_alarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(AddAlarmActivity.this,FilePickerActivity.class);
+                intent.putExtra(FilePickerActivity.CONFIGS,new Configurations.Builder().setCheckPermission(true).setShowAudios(true).setShowImages(false).setShowVideos(false).setMaxSelection(1).setSkipZeroSizeFiles(true).build());
             }
+        });
+
+
+
     }
 
-}
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(resultCode == RESULT_OK && data !=null ){
+//            ArrayList<MediaFile> mediaFiles=data.getParcelableArrayListExtra(FilePickerActivity.MEDIA_FILES);
+//            String path=mediaFiles.get(0).getPath();
+//            if(requestCode == 103){
+//                filePathToToast("Audio Path :" + path);
+//                return;
+//            }
+//    }
+//
+//}
 
-    private void filePathToToast(String s){
-        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
-    }
+//    private void filePathToToast(String s){
+//        Toast.makeText(getApplicationContext(),s,Toast.LENGTH_SHORT).show();
+//    }
 
 }

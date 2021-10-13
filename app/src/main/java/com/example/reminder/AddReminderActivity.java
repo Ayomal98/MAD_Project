@@ -62,7 +62,7 @@ public class AddReminderActivity extends AppCompatActivity implements DatePicker
                 DatabaseHelper databaseHelper=new DatabaseHelper(AddReminderActivity.this);
                 boolean success= databaseHelper.addOne(alarmModel);
                 Toast.makeText(AddReminderActivity.this,"Your Reminder has been setup" , Toast.LENGTH_SHORT).show();
-                Intent intent=new Intent(AddReminderActivity.this,ViewAlarmActivity.class);
+                Intent intent=new Intent(AddReminderActivity.this,ViewReminderActivity.class);
                 startActivity(intent);
             }
         });
