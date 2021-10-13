@@ -109,7 +109,7 @@
 
 
         <Button
-            android:id="@+id/addAlarm_btn"
+            android:id="@+id/addReminder_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -118,21 +118,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.741"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/select_audio"
+            app:layout_constraintTop_toBottomOf="@+id/select_audio_alarm"
             app:layout_constraintVertical_bias="1.0" />
 
-        <EditText
-            android:id="@+id/select_audio"
+        <Button
+            android:id="@+id/select_audio_alarm"
             android:layout_width="350dp"
-            android:layout_height="100dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/rounded_corner"
+            android:backgroundTint="#939392"
             android:hint="Select an alarm audio"
             android:inputType="text"
             android:paddingLeft="20dp"
             android:paddingRight="15dp"
             android:paddingBottom="30dp"
             android:textSize="20sp"
+            android:textColor="#000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/select_time" />

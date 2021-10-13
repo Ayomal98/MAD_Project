@@ -10,32 +10,36 @@
 
     <TextView
         android:id="@+id/text_Title"
+        android:layout_width="196dp"
+        android:layout_height="68dp"
+        android:layout_weight="20"
         android:gravity="center"
-        android:textAlignment="center"
         android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_weight="66.6"
-         />
+        android:textAlignment="center"
+        android:textSize="21sp"
+        android:textStyle="bold" />
+
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="283dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_weight="33.3">
+        android:layout_weight="33.3"
+        android:orientation="vertical">
+
         <TextView
             android:id="@+id/text_Date"
-            android:gravity="center"
-            android:text="Date"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            />
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:text="Date" />
+
         <TextView
             android:id="@+id/text_Time"
-            android:gravity="center"
-            android:text="Time"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            />
+            android:gravity="center"
+            android:text="Time" />
 
     </LinearLayout>
+
 </LinearLayout>

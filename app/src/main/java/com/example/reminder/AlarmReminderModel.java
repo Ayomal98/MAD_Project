@@ -14,6 +14,7 @@ public class AlarmReminderModel {
     private int noNotifications;
     private String uri;
 
+
     public String getUri() {
         return uri;
     }

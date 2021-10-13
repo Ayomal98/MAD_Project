@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -24,6 +25,7 @@ public class AlarmListAdapter extends ArrayAdapter<AlarmReminderModel> {
         String title=getItem(position).getTitle();
         String date=getItem(position).getDate();
         String time=getItem(position).getTime();
+        String description=getItem(position).getDescription();
         AlarmReminderModel alarmModel=new AlarmReminderModel(id,title,date,time);
         LayoutInflater inflater=LayoutInflater.from(context);
         convertView=inflater.inflate(mresource,parent,false);

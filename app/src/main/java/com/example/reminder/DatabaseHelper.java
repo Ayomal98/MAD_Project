@@ -84,10 +84,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
+
+
     public List<AlarmReminderModel> getEveryAlarms(){
         List<AlarmReminderModel> returnAlarms=new ArrayList<>();
         String type="Alarm";
-        String queryAlarm="SELECT * FROM ALARM_REMINDER" ;
+        String queryAlarm="SELECT * FROM ALARM_REMINDER WHERE Type='Alarm'" ;
         SQLiteDatabase db=this.getReadableDatabase();
         Cursor cursor = db.rawQuery(queryAlarm,null);
         if(cursor.moveToFirst()){
@@ -100,10 +102,38 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 returnAlarms.add(alarmReminderModel);
             }while(cursor.moveToNext());
         }else{
-
         }
-        System.out.print("Alatms: ");
-        System.out.println(returnAlarms);
         return returnAlarms;
+    }
+
+    public List<AlarmReminderModel> getEveryReminders(){
+        List<AlarmReminderModel> returnAlarms=new ArrayList<>();
+        String type="Alarm";
+        String queryAlarm="SELECT * FROM ALARM_REMINDER WHERE Type='Reminder'" ;
+        SQLiteDatabase db=this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryAlarm,null);
+        if(cursor.moveToFirst()){
+            do{
+                int id=cursor.getInt(0);
+                String Title=cursor.getString(1);
+                String Date=cursor.getString(4);
+                String Time=cursor.getString(5);
+                AlarmReminderModel alarmReminderModel=new AlarmReminderModel(id,Title,Date,Time);
+                returnAlarms.add(alarmReminderModel);
+            }while(cursor.moveToNext());
+        }else{
+        }
+        return returnAlarms;
+    }
+
+    public boolean deleteOne(AlarmReminderModel alarmReminderModel){
+        SQLiteDatabase db=this.getWritableDatabase();
+        String queryDelete="DELETE FROM ALARM_REMINDER WHERE "+ ID_Column+" = " +alarmReminderModel.getId();
+        Cursor cursor = db.rawQuery(queryDelete, null);
+        if(cursor.moveToFirst()){
+            return true;
+        }else{
+            return false;
+        }
     }
 }
